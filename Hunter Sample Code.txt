@@ -1,0 +1,55 @@
+import java.util.Scanner;
+public class Outfit {
+   
+	String hat; 
+	String shirt; 
+	String pants;
+    String shoes;
+
+    public Outfit(String hat, String shirt, String pants, String shoes) 
+    { 
+        this.hat = hat; 
+        this.shirt = shirt; 
+        this.pants = pants; 
+        this.shoes = shoes; 
+        
+       }  
+    	       
+		    static Outfit HotWear = new Outfit("Sunhat, ","t-shirt, ", "shorts, and ", "flip-flops!");//temp over 80
+		    static Outfit WarmWear = new Outfit(" ", "t-shirt, ","shorts, and ", "sneakers");//temp between 79-60
+		    static Outfit NormalWear = new Outfit(" ", "jacket, ", "jeans, and ", "sneakers"); //temp between 59-45
+		    static Outfit CoolWear =  new Outfit("Beanie, ", "hoodie, ", "sweats, and ", "boots"); //temp between 44-30
+		    static Outfit SnowWear =  new Outfit("Beanie, ", "snowcoat, ", "sweats, and ", "boots");//under 29
+		    
+		    static Scanner userInput = new Scanner(System.in);
+		      
+		    public static void main(String[] args) 
+	    	{
+		    
+		    	
+		   	System.out.print("Please enter today's temperature: ");
+		    Double Temperature = userInput.nextDouble();
+		    
+		    if (Temperature >= 80)
+		    {
+		    	System.out.println("Sunny no clouds has you wearing " + HotWear.hat + HotWear.shirt + HotWear.pants + HotWear.shoes);
+		    } 
+		    if (Temperature >=60 && Temperature <=79)
+		    {
+		    	System.out.println("Perfect weather has you wearing " + WarmWear.hat + WarmWear.shirt + WarmWear.pants + WarmWear.shoes);
+		    }
+		    if (Temperature >=45 && Temperature <=59)
+		    {
+		    	System.out.println("Boring regular weather has you wearing " + NormalWear.hat + NormalWear.shirt + NormalWear.pants + NormalWear.shoes);
+		    }
+		    if (Temperature >=44 && Temperature <=30)
+		    {
+		    	System.out.println("Snowing Cold Weather has you wearing " + CoolWear.hat + CoolWear.shirt + CoolWear.pants + CoolWear.shoes);
+		    }	
+		    if (Temperature <=29)
+		    {
+		    	System.out.println("Snowing Cold Weather has you wearing " + SnowWear.hat + SnowWear.shirt + SnowWear.pants + SnowWear.shoes);
+		    }
+	    	}
+
+    	}
